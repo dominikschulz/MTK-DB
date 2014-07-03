@@ -227,7 +227,7 @@ sub _init_dbh {
         $self->logger()->log( message => $msg, level => 'error', );
         confess($msg);
     }
-    elsif ( $dbh && $dbh->ping() ) {
+    elsif ( $dbh && ref($dbh) eq 'DBI::db' && $dbh->ping() ) {
         #$self->logger()->log( message => 'Connected to DB w/ DSN ' . $self->dsn(), level => 'debug', );
         return $dbh;
     }
