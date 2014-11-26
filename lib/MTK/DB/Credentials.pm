@@ -166,6 +166,7 @@ sub _detect_credentials {
         my $database = $self->config()->get_scalar( $key . '::Database', { Default => 'mysql', }, );
         my $socket   = $self->config()->get_scalar( $key . '::Socket', );
         next unless $username && $password;
+        $database ||= 'mysql';
         $self->logger()->log( message => 'Adding user supplied key for checking ('.$username.q{:}.$password.q{/}.$database.q{)}, level => 'debug', );
         my $arg_ref = {
             'username' => $username,
