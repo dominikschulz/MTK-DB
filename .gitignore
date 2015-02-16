@@ -1,4 +1,5 @@
 blib*
+*.bak
 .build/
 Makefile
 Makefile.old

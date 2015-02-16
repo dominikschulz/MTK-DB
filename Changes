@@ -1,5 +1,8 @@
 Revision history for MTK-DB
 
+0.22  2015-02-16
+      Do not disconnect if not already connected.
+
 0.21  2014-07-03
       Make sure connection works or exit with proper error.
 
